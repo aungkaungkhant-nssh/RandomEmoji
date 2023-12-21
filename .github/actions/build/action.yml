@@ -7,11 +7,11 @@ runs:
       uses: actions/checkout@v3
     - name: Install Node.js
       uses: actions/setup-node@v3
-      with:
-        node-version: '14'  # Specify the Node.js version you need
     - name: Set up npm
-      run: npm install -g npm
+      uses: npm/action-setup@v2
+      with:
+        version: latest
     - name: Install dependencies
-      run: npm install
-
+      shell: bash
+      run:  npm install
 
