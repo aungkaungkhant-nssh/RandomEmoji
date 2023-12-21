@@ -6,11 +6,11 @@ runs:
     - name: Check out source code
       uses: actions/checkout@v3
     - name: Install Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
     - name: Set up npm
-      uses: npm/action-setup@v2
+      uses: npm/action-setup@v4
       with:
-         node-version: '14'
+        node-version: '14'
     - name: Install dependencies
       shell: bash
       run:  npm install
