@@ -10,7 +10,7 @@ runs:
     - name: Set up npm
       uses: npm/action-setup@v2
       with:
-        version: latest
+         node-version: '14'
     - name: Install dependencies
       shell: bash
       run:  npm install
