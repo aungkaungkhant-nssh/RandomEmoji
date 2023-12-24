@@ -16,6 +16,6 @@ jobs:
       - name: Install Railway CLI
         run: npm install --global @railway/cli@latest
       - name: Deploy to Railway
-        run: railway up --service="RandomEmoji" # update this to the name of your service!
+        run: railway up --service="RandomEmoji"
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
