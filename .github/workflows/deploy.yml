@@ -11,25 +11,11 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version:  16
-
-      - name: Install dependencies
-        run: npm install
-
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/build
       - name: Install Railway CLI
-        run: npm install -g @railway/cli@latest
-
-      - name: Set Railway Token
-        run: echo "RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }}" >> $GITHUB_ENV
-
-      - name: Login to Railway
-        run: railway login
-
+        run: npm install --global @railway/cli@latest
       - name: Deploy to Railway
-        run: railway up --service="RandomEmoji"
+        run: railway up --service="RandomEmoji" # update this to the name of your service!
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
