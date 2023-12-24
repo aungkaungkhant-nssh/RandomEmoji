@@ -18,5 +18,5 @@ jobs:
       - name: Deploy to Railway
         run: railway up --service="RandomEmoji"
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: 61ef466c-81d0-46c7-b141-bb615432e597
 
