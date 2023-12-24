@@ -19,3 +19,4 @@ jobs:
         run: railway up --service="RandomEmoji"
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
